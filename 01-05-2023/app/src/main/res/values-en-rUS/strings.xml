@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="ingrese_el_numero_a">Enter number A</string>
+    <string name="ingrese_el_numero_b">Enter number B</string>
+    <string name="sumar">Addition</string>
+    <string name="restar">Subtraction</string>
+    <string name="rta">Rta</string>
+</resources>
