@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.usa.retotiendavirtual.R;
 import com.usa.retotiendavirtual.ui.producto.adapter.ProductoAdapter;
 import com.usa.retotiendavirtual.ui.producto.model.ProductoModel;
@@ -19,15 +22,34 @@ import java.util.List;
 
 
 public class ProductoFragment extends Fragment {
-    RecyclerView recyclerViewProducto;
 
+    ImageSlider imgSlider;
+    RecyclerView recyclerViewProducto;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_producto, container, false);
+
+        imgSlider = view.findViewById(R.id.imgSlider);
         recyclerViewProducto = view.findViewById(R.id.recyclerViewProductos);
 
+        //Slider image products
+        List<SlideModel> imageSliders = new LinkedList<>();
+        imageSliders.add(new SlideModel("https://www.shutterstock.com/image-vector/stylish-footwear-womens-shoes-sale-banner-2004891065", "internet", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel(R.drawable.banner_00, "banner00", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel(R.drawable.banner_01, "banner01", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel(R.drawable.banner_02, "banner02", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel(R.drawable.banner_03, "banner03", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel(R.drawable.banner_04, "banner04", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel(R.drawable.banner_05, "banner05", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel(R.drawable.banner_06, "banner06", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel(R.drawable.banner_07, "banner07", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel(R.drawable.banner_08, "banner08", ScaleTypes.FIT));
+
+        imgSlider.setImageList(imageSliders);
+
+        //Recycler view products
         List<ProductoModel> productos = new LinkedList<>();
         productos.add(new ProductoModel("Adidas","zapato de uso diario Adidas",250000,R.drawable.zapato_01));
         productos.add(new ProductoModel("Nike","zapato de uso diario Nike",260000,R.drawable.zapato_02));
