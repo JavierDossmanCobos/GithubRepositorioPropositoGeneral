@@ -6,12 +6,12 @@
         <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\LENOVO I7\.android\avd\Galaxy_S23_API_31.avd" />
+            <type value="SERIAL_NUMBER" />
+            <value value="adb-R58N34DPWGM-uH4QNF._adb-tls-connect._tcp" />
           </Key>
         </deviceKey>
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2023-06-16T20:05:02.803897200Z" />
+    <timeTargetWasSelectedWithDropDown value="2023-06-16T20:29:16.795493300Z" />
   </component>
 </project>

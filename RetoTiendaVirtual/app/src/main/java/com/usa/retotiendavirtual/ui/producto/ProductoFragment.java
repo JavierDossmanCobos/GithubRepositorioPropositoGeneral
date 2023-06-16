@@ -36,13 +36,15 @@ public class ProductoFragment extends Fragment {
 
         //Slider image products
         List<SlideModel> imageSliders = new LinkedList<>();
-        imageSliders.add(new SlideModel("https://www.shutterstock.com/image-vector/stylish-footwear-womens-shoes-sale-banner-2004891065", "internet", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel("https://promociondescuentos.com/wp-content/uploads/2016/02/Suburbia-zapatos.jpg", "internet", ScaleTypes.FIT));
         imageSliders.add(new SlideModel(R.drawable.banner_00, "banner00", ScaleTypes.FIT));
         imageSliders.add(new SlideModel(R.drawable.banner_01, "banner01", ScaleTypes.FIT));
         imageSliders.add(new SlideModel(R.drawable.banner_02, "banner02", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel("https://promociondescuentos.com/wp-content/uploads/2016/02/Suburbia-zapatos.jpg", "internet", ScaleTypes.FIT));
         imageSliders.add(new SlideModel(R.drawable.banner_03, "banner03", ScaleTypes.FIT));
         imageSliders.add(new SlideModel(R.drawable.banner_04, "banner04", ScaleTypes.FIT));
         imageSliders.add(new SlideModel(R.drawable.banner_05, "banner05", ScaleTypes.FIT));
+        imageSliders.add(new SlideModel("https://promociondescuentos.com/wp-content/uploads/2016/02/Suburbia-zapatos.jpg", "internet", ScaleTypes.FIT));
         imageSliders.add(new SlideModel(R.drawable.banner_06, "banner06", ScaleTypes.FIT));
         imageSliders.add(new SlideModel(R.drawable.banner_07, "banner07", ScaleTypes.FIT));
         imageSliders.add(new SlideModel(R.drawable.banner_08, "banner08", ScaleTypes.FIT));
