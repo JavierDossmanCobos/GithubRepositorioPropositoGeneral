@@ -2,6 +2,7 @@ package com.usa.retotiendavirtual.ui.producto;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,9 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ActionTypes;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.interfaces.TouchListener;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.usa.retotiendavirtual.R;
 import com.usa.retotiendavirtual.ui.producto.adapter.ProductoAdapter;
@@ -50,6 +54,13 @@ public class ProductoFragment extends Fragment {
         imageSliders.add(new SlideModel(R.drawable.banner_08, "banner08", ScaleTypes.FIT));
 
         imgSlider.setImageList(imageSliders);
+
+        imgSlider.setTouchListener(new TouchListener() {
+            @Override
+            public void onTouched(@NonNull ActionTypes actionTypes, int i) {
+                Toast.makeText(getContext(),"Clicked on image slider >> "+String.valueOf(i),Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //Recycler view products
         List<ProductoModel> productos = new LinkedList<>();

@@ -17,6 +17,8 @@
         app:iss_text_align="CENTER"
         app:iss_text_color="#000000"
         app:iss_error_image="@drawable/default_error"
+        app:iss_placeholder="@drawable/banner_05"
+        app:iss_selected_dot="@color/teal_700"
 
         />
 
