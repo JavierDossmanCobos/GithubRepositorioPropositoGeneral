@@ -38,20 +38,14 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         return new ProductoViewHolder(view);
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ProductoAdapter.ProductoViewHolder holder, int position) {
-        holder.txtTituloProducto.setText(productos.get(position).getNombre());
-        holder.txtDescripcionProducto.setText(productos.get(position).getDescripcion());
-        holder.txtPrecioProducto.setText("$ "+String.valueOf(productos.get(position).getPrecio()));
-        holder.imgProducto.setImageResource(productos.get(position).getImagen());
-        holder.posicion = holder.getAdapterPosition();
-    }
+
     public class ProductoViewHolder extends RecyclerView.ViewHolder {
-        int posicion;
+
         ImageView imgProducto;
         TextView txtTituloProducto, txtDescripcionProducto, txtPrecioProducto;
-        public ProductoViewHolder(@NonNull View itemView) {
 
+        int position;
+        public ProductoViewHolder(@NonNull View itemView) {
             super(itemView);
             imgProducto = itemView.findViewById(R.id.imgProducto);
             txtTituloProducto = itemView.findViewById(R.id.txtTituloProducto);
@@ -61,17 +55,23 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                //    Toast.makeText(itemView.getContext(), "Click en un card view  "+String.valueOf(posicion),Toast.LENGTH_SHORT).show();
-
                     Context contexto = itemView.getContext();
-                    Intent intent = new Intent(itemView.getContext(), DetallesProductoActivity.class);
-                    //Todo Aqui debemos mandar los datos a la otra actividad
+                    Intent intent = new Intent(contexto, DetallesProductoActivity.class);
+                    intent.putExtra("nombre",productos.get(position).getNombre());
+                    intent.putExtra("descripcion",productos.get(position).getDescripcion());
+                    intent.putExtra("precio",productos.get(position).getPrecio());
+                    intent.putExtra("imagen", productos.get(position).getImagen());
                     contexto.startActivity(intent);
-
                 }
             });
-
         }
     }
-
+    @Override
+    public void onBindViewHolder(@NonNull ProductoAdapter.ProductoViewHolder holder, int position) {
+        holder.txtTituloProducto.setText(productos.get(position).getNombre());
+        holder.txtDescripcionProducto.setText(productos.get(position).getDescripcion());
+        holder.txtPrecioProducto.setText("$ "+String.valueOf(productos.get(position).getPrecio()));
+        holder.imgProducto.setImageResource(productos.get(position).getImagen());
+        holder.position = holder.getAdapterPosition();
+    }
 }

@@ -1,0 +1,28 @@
+private boolean verificarCampos(){
+        if(!edNombreUsuario.getText().toString().isEmpty()){
+            if(!edCorreoUsuario.getText().toString().isEmpty()){
+                if(!edContraseñaUsuario1.getText().toString().isEmpty()){
+                    if(!edContraseñaUsuario2.getText().toString().isEmpty()){
+                        if(!edTelefonoUsuario.getText().toString().isEmpty()){
+                            if(!edCumpleUsuario.getText().toString().isEmpty()){
+                                return true;
+                            }else {
+                                edCumpleUsuario.setError("Es requerido");
+                            }
+                        }else {
+                            edTelefonoUsuario.setError("Es requerido");
+                        }
+                    }else {
+                        edContraseñaUsuario2.setError("Es requerido");
+                    }
+                }else {
+                    edContraseñaUsuario1.setError("Es requerido");
+                }
+            }else {
+                edCorreoUsuario.setError("Es requerido");
+            }
+        }else {
+            edNombreUsuario.setError("Es requerido");
+        }
+        return false;
+    }

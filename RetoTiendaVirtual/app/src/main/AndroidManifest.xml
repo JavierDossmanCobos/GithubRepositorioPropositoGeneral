@@ -13,8 +13,12 @@
         android:theme="@style/Theme.RetoTiendaVirtual"
         tools:targetApi="31">
         <activity
-            android:name=".DetallesProductoActivity"
+            android:name=".RegistroActivity"
             android:exported="false" />
+        <activity
+            android:name=".DetallesProductoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.RetoTiendaVirtual.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
