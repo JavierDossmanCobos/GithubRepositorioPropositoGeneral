@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center|center_horizontal|fill_horizontal"
+    android:layout_margin="20sp"
+    android:gravity="center|center_horizontal|center_vertical"
+    android:orientation="vertical"
+    app:barrierMargin="20sp"
+    tools:context=".SignonActivity">
+
+    <EditText
+        android:id="@+id/edEmailSignon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:ems="10"
+        android:gravity="center_horizontal|left|center_vertical"
+        android:hint="Ingrese su direccion de correo"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/edPasswordSignon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:ems="10"
+        android:gravity="center_horizontal|left|center_vertical"
+        android:hint="Ingrese su contraseña"
+        android:inputType="textPassword" />
+</LinearLayout>

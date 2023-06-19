@@ -1,20 +1,14 @@
-package com.usa.actividades;
+package com.usa.logonactivitie;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import java.util.logging.Handler;
-
-public class TerceraActivity extends AppCompatActivity {
+public class SignonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tercera);
-
-
-        }
-
-
+        setContentView(R.layout.activity_signon);
     }
+}
