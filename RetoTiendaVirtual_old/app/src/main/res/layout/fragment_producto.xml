@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.producto.ProductoFragment">
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/imgSlider"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        app:iss_auto_cycle="true"
+        app:iss_period="@integer/material_motion_duration_long_2"
+        app:iss_delay="@integer/material_motion_duration_long_2"
+        app:iss_text_align="CENTER"
+        app:iss_text_color="#000000"
+        app:iss_error_image="@drawable/default_error"
+        app:iss_placeholder="@drawable/banner_05"
+        app:iss_selected_dot="@color/teal_700"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProductos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="10sp"
+    android:layout_marginVertical="10sp"
+    android:orientation="vertical"
+    tools:context=".DetallesProductoActivity">
+
+    <ImageView
+        android:id="@+id/imgDetalleProducto"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginVertical="30sp"
+        android:foregroundGravity="center_vertical|center_horizontal"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/txtNombreDetalleProducto"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_marginVertical="10sp"
+        android:text="TextView"
+        android:textColor="@color/purple_500"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtDescripcionDetalleProducto"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginVertical="10sp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtPrecioDetalleProducto"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_marginVertical="10sp"
+        android:text="TextView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnResCantidad"
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5sp"
+            android:layout_weight="1"
+            android:background="@drawable/button_gradient_style1"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginHorizontal="5sp"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btnSumCantidad"
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5sp"
+            android:layout_weight="1"
+            android:background="@drawable/button_gradient_style1"
+            android:text="+" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAgregarProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:layout_marginVertical="20sp"
+        android:background="@drawable/button_gradient"
+        android:text="Comprar" />
+</LinearLayout>
