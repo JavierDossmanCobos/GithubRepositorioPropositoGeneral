@@ -46,7 +46,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         int position;
         public ProductoViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgProducto = itemView.findViewById(R.id.imgSucursal);
+            imgProducto = itemView.findViewById(R.id.imgCardViewSucursal);
             txtTituloProducto = itemView.findViewById(R.id.txtTituloProducto);
             txtDescripcionProducto = itemView.findViewById(R.id.txtDescripcionProducto);
             txtPrecioProducto = itemView.findViewById(R.id.txtPrecioProducto);

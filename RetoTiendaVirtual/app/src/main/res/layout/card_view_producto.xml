@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imgSucursal"
+            android:id="@+id/imgCardViewSucursal"
             android:layout_width="120sp"
             android:layout_height="120sp"
             android:scaleType="fitXY"

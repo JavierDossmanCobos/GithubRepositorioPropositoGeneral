@@ -3,12 +3,12 @@ package com.usa.retotiendavirtual.ui.sucursales.model;
 public class SucursalModel {
     private long altitud;
     private long longitud;
-    String direccion;
-    String horaApertura;
-    String horaCierre;
-    String nonbre;
-    String telefono;
-    int imgBanner;
+    private String direccion;
+    private String horaApertura;
+    private String horaCierre;
+    private String nonbre;
+    private String telefono;
+    private int imgBanner;
 
     public SucursalModel(int imgBanner) {
         this.imgBanner = imgBanner;
@@ -87,5 +87,19 @@ public class SucursalModel {
 
     public void setImgBanner(int imgBanner) {
         this.imgBanner = imgBanner;
+    }
+
+    @Override
+    public String toString() {
+        return "SucursalModel{" +
+                "altitud=" + altitud +
+                ", longitud=" + longitud +
+                ", direccion='" + direccion + '\'' +
+                ", horaApertura='" + horaApertura + '\'' +
+                ", horaCierre='" + horaCierre + '\'' +
+                ", nonbre='" + nonbre + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", imgBanner=" + imgBanner +
+                '}';
     }
 }

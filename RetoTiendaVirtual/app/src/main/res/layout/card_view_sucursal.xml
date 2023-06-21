@@ -15,8 +15,10 @@ app:cardElevation="10sp">
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/imgSucursal"
+        android:id="@+id/imgCardViewSucursal"
         android:layout_width="match_parent"
         android:layout_height="120sp"
         android:scaleType="fitXY"
         tools:srcCompat="@drawable/banner_00" />
+</LinearLayout>
+</androidx.cardview.widget.CardView>
