@@ -7,7 +7,7 @@
     android:layout_marginHorizontal="10sp"
     android:layout_marginVertical="10sp"
     android:orientation="vertical"
-    tools:context=".DetallesProductoActivity">
+    tools:context=".ui.producto.activities.DetallesProductoActivity">
 
     <ImageView
         android:id="@+id/imgDetalleProducto"

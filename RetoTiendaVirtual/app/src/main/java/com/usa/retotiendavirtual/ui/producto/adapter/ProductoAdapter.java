@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.usa.retotiendavirtual.DetallesProductoActivity;
+import com.usa.retotiendavirtual.ui.producto.activities.DetallesProductoActivity;
 import com.usa.retotiendavirtual.R;
 import com.usa.retotiendavirtual.ui.producto.model.ProductoModel;
 

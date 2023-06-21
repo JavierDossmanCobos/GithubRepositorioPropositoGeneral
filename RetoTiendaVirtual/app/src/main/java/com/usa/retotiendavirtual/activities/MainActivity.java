@@ -1,4 +1,4 @@
-package com.usa.retotiendavirtual;
+package com.usa.retotiendavirtual.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +18,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.usa.retotiendavirtual.R;
 import com.usa.retotiendavirtual.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

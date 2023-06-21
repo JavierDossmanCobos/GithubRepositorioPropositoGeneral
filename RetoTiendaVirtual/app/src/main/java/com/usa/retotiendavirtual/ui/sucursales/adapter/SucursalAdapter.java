@@ -1,5 +1,6 @@
 package com.usa.retotiendavirtual.ui.sucursales.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.usa.retotiendavirtual.R;
 import com.usa.retotiendavirtual.ui.producto.adapter.ProductoAdapter;
+import com.usa.retotiendavirtual.ui.sucursales.activities.DetallesSucursalesActivity;
 import com.usa.retotiendavirtual.ui.sucursales.model.SucursalModel;
 
 import java.util.List;
@@ -48,6 +50,14 @@ public class SucursalAdapter extends RecyclerView.Adapter<SucursalAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgCardViewSucursal = itemView.findViewById(R.id.imgCardViewSucursal);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), DetallesSucursalesActivity.class);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
+
         }
     }
 }

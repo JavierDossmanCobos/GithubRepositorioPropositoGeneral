@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.usa.retotiendavirtual.activities.LoginActivity;
+
 public class LauncherActivity extends AppCompatActivity {
 
     @Override

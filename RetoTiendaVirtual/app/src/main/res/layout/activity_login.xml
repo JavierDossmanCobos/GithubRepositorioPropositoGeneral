@@ -9,7 +9,7 @@
     android:gravity="center|center_horizontal|center_vertical"
     android:orientation="vertical"
     app:barrierMargin="20sp"
-    tools:context=".LoginActivity">
+    tools:context=".activities.LoginActivity">
 
     <EditText
         android:id="@+id/edEmailLogin"

@@ -1,4 +1,4 @@
-package com.usa.retotiendavirtual;
+package com.usa.retotiendavirtual.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.usa.retotiendavirtual.R;
 
 import java.util.Calendar;
 import java.util.TimeZone;
