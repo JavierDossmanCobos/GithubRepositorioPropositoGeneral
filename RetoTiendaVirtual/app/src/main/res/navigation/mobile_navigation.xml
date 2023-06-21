@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_servicios"
-        android:name="com.usa.retotiendavirtual.ui.gallery.GalleryFragment"
+        android:name="com.usa.retotiendavirtual.ui.servicios.ServiciosFragment"
         android:label="@string/servicios"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_servicios" />
 
     <fragment
         android:id="@+id/nav_sucursales"
-        android:name="com.usa.retotiendavirtual.ui.slideshow.SlideshowFragment"
+        android:name="com.usa.retotiendavirtual.ui.sucursales.SucursalesFragment"
         android:label="@string/sucursales"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_sucursales" />
 </navigation>

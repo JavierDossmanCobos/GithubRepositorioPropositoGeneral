@@ -1,5 +1,6 @@
 package com.usa.retotiendavirtual;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -66,9 +67,16 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.ItemNosotros) {
             Toast.makeText(this, "Item Nosotros", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.ItemCerrarSesion) {
-            Toast.makeText(this, "Item Cerrar Sesion", Toast.LENGTH_SHORT).show();
+            cerrarSesion();
+           // Toast.makeText(this, "Item Cerrar Sesion", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void cerrarSesion() {
+        //TODO logica de cerrar sesion
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 
     @Override

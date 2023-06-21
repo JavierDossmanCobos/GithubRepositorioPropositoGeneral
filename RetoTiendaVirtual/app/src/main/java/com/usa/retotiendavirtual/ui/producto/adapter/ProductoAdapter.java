@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +46,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         int position;
         public ProductoViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgProducto = itemView.findViewById(R.id.imgProducto);
+            imgProducto = itemView.findViewById(R.id.imgSucursal);
             txtTituloProducto = itemView.findViewById(R.id.txtTituloProducto);
             txtDescripcionProducto = itemView.findViewById(R.id.txtDescripcionProducto);
             txtPrecioProducto = itemView.findViewById(R.id.txtPrecioProducto);
