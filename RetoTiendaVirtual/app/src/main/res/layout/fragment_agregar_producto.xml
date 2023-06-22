@@ -13,19 +13,20 @@
     tools:context=".ui.agregarproducto.AgregarProductoFragment">
 
     <ImageView
-        android:id="@+id/imgAddProducto"
-        android:layout_width="150sp"
-        android:layout_height="150sp"
-
-        android:layout_marginVertical="10sp"
+        android:id="@+id/imgAgregarProducto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:layout_marginVertical="25dp"
+        android:scaleType="fitXY"
         tools:src="@drawable/ic_camera_producto" />
 
     <EditText
         android:id="@+id/edNombreAddProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20sp"
-        android:layout_marginVertical="10sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
         android:ems="10"
         android:hint="@string/ingrese_el_nombre_del_producto"
         android:inputType="text" />
@@ -42,8 +43,8 @@
         android:id="@+id/edPrecioAddProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20sp"
-        android:layout_marginVertical="10sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
         android:ems="10"
         android:hint="@string/ingrese_el_precio_del_producto"
         android:inputType="numberSigned" />
@@ -59,4 +60,5 @@
         android:textColor="@color/ic_launcher_app_background"
         android:textSize="16sp"
         android:textStyle="bold" />
+
 </LinearLayout>

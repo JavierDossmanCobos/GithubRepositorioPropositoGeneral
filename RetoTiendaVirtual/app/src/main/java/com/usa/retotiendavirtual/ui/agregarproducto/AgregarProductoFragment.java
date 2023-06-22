@@ -1,6 +1,7 @@
 package com.usa.retotiendavirtual.ui.agregarproducto;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -30,9 +31,10 @@ public class AgregarProductoFragment extends Fragment {
 
     EditText edNombreAddProducto, edPrecioAddProducto;
     MultiAutoCompleteTextView edDescripcionAddProducto;
-    ImageView imgAddProducto;
+    ImageView imgAgregarProducto;
     Button btnAgregarProducto;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,10 +43,10 @@ public class AgregarProductoFragment extends Fragment {
         edNombreAddProducto = (EditText) view.findViewById(R.id.edNombreAddProducto);
         edPrecioAddProducto = (EditText) view.findViewById(R.id.edPrecioAddProducto);
         edDescripcionAddProducto = (MultiAutoCompleteTextView) view.findViewById(R.id.edDescripcionAddProducto);
-        imgAddProducto = (ImageView) view.findViewById(R.id.imgAddProducto);
+        imgAgregarProducto = (ImageView) view.findViewById(R.id.imgAgregarProducto);
         btnAgregarProducto = (Button) view.findViewById(R.id.btnAgregarProducto);
 
-        imgAddProducto.setOnClickListener(new View.OnClickListener() {
+        imgAgregarProducto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tomarFoto();
@@ -62,7 +64,7 @@ public class AgregarProductoFragment extends Fragment {
 
     private void tomarFoto() {
 
-        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED){
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_DENIED){
         Intent cameraintent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(cameraintent, CODE_INTENT_CAMERA);
         } else {
@@ -70,14 +72,13 @@ public class AgregarProductoFragment extends Fragment {
         }
 
     }
-    // onActivityResult
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode){
             case CODE_INTENT_CAMERA:
                 Bitmap image = (Bitmap)data.getExtras().get("data");
-                imgAddProducto.setImageBitmap(image);
+                imgAgregarProducto.setImageBitmap(image);
                 break;
         }
     }
@@ -87,6 +88,6 @@ public class AgregarProductoFragment extends Fragment {
     }
 
     private void verificarCampos() {
-        
+
     }
 }
