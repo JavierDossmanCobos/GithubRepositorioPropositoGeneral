@@ -1,6 +1,7 @@
 package com.usa.retotiendavirtual.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +24,9 @@ import com.usa.retotiendavirtual.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final String FILENAME_SHARED_PREFERENCES = "LOGONdata_SIGNONuser";
+    private final String KEY_ROLE = "LOGONROLE";
+
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -43,15 +47,31 @@ public class MainActivity extends AppCompatActivity {
         });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+        mostrarItemsPorRol(navigationView);
+
+        navigationView.getMenu().findItem(R.id.nav_agregar_producto).setVisible(true);
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_productos, R.id.nav_servicios, R.id.nav_sucursales)
+                R.id.nav_productos, R.id.nav_servicios, R.id.nav_sucursales, R.id.nav_agregar_producto)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
+
+    private void mostrarItemsPorRol(NavigationView navigationView) {
+        //  SharedPreferences.
+        SharedPreferences sharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES, MODE_PRIVATE);
+        String logonrole = sharedPreferences.getString(KEY_ROLE, null);
+        if(logonrole.equals("admin")) {
+            navigationView.getMenu().findItem(R.id.nav_agregar_producto).setVisible(true);
+        } else if(logonrole.equals("client")) {
+            navigationView.getMenu().findItem(R.id.nav_agregar_producto).setVisible(false);
+        } else {
+            navigationView.getMenu().findItem(R.id.nav_agregar_producto).setVisible(false);
+        }
     }
 
     @Override
@@ -76,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void cerrarSesion() {
         //TODO logica de cerrar sesion
+        SharedPreferences sharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear().commit();
+
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
     }

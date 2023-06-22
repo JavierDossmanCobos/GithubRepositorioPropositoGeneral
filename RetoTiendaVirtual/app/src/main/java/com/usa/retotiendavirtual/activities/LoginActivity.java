@@ -16,9 +16,10 @@ import com.usa.retotiendavirtual.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private final String NOMBRE_SHARED = "DATOS_USUARIO";
-    private final String KEY_CORREO = "DATOS_USUARIO";
-    private final String nombreArchivoSharedPreferences = "DATOS_USUARIO";
+    private final String FILENAME_SHARED_PREFERENCES = "LOGONdata_SIGNONuser";
+    private final String KEY_EMAIL = "LOGONEMAIL";
+    private final String KEY_PASSWORD = "LOGONPASSWORD";
+    private final String KEY_ROLE = "LOGONROLE";
 
     EditText edEmailLogin, edPasswordLogin;
     TextView txtForgotPasswordLogin;
@@ -51,24 +52,41 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private void iniciarSesionDatosGuardados(){
-      //  SharedPreferences.
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        iniciarSesionDatosGuardados();
+    }
+
+    private void iniciarSesionDatosGuardados() {
+        //  SharedPreferences.
+        SharedPreferences sharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES, MODE_PRIVATE);
+        String logonemail = sharedPreferences.getString(KEY_EMAIL, null);
+        String logonpassword = sharedPreferences.getString(KEY_PASSWORD, null);
+        String logonrole = sharedPreferences.getString(KEY_ROLE, null);
+
+        if (logonemail != null && logonpassword != null && logonrole != null) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
+    }
+
     private void iniciarSesion() {
-        String theemail = edEmailLogin.getText().toString();
-        String thepassword = edPasswordLogin.getText().toString();
-        String therole = "admin";
+        String logonemail = edEmailLogin.getText().toString();
+        String logonpassword = edPasswordLogin.getText().toString();
+        String logonrole = "admin";
         if(verificarCampos()) {
             if (edEmailLogin.getText().toString().equals("dossmanj@gmail.com") && edPasswordLogin.getText().toString().equals("123456789")) {
                 //TODO almacena info en un archivo privado
-                SharedPreferences sharedPreferences = getSharedPreferences(nombreArchivoSharedPreferences,MODE_PRIVATE);
+                //
+                SharedPreferences sharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES,MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("CORREO",theemail);
-                editor.putString("PASSWORD",thepassword);
-                editor.putString("ROL",therole);
+                editor.putString(KEY_EMAIL,logonemail);
+                editor.putString(KEY_PASSWORD,logonpassword);
+                editor.putString(KEY_ROLE,logonrole);
                 editor.commit();
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);

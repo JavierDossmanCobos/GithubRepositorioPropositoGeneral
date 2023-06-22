@@ -22,4 +22,11 @@
         android:name="com.usa.retotiendavirtual.ui.sucursales.SucursalesFragment"
         android:label="@string/sucursales"
         tools:layout="@layout/fragment_sucursales" />
+
+    <fragment
+        android:id="@+id/nav_agregar_producto"
+        android:name="com.usa.retotiendavirtual.ui.agregarproducto.AgregarProductoFragment"
+        android:label="@string/agregar_producto"
+        tools:layout="@layout/fragment_agregar_producto" />
+
 </navigation>
