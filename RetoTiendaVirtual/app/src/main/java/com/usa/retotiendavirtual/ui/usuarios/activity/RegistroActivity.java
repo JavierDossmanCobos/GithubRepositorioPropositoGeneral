@@ -4,13 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +28,10 @@ import java.util.TimeZone;
 public class RegistroActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
+    private final String FILENAME_SHARED_PREFERENCES = "LOGONdata_SIGNONuser";
+    private final String KEY_EMAIL = "LOGONEMAIL";
+    private final String KEY_PASSWORD = "LOGONPASSWORD";
+    private final String KEY_ROLE = "LOGONROLE";
 
     EditText edNombreUsuario, edCorreoUsuario, edPasswordUsuario1, edPasswordUsuario2, edTelefonoUsuario, edFechaCumpleUsuario;
 
@@ -67,10 +74,12 @@ public class RegistroActivity extends AppCompatActivity {
         int CurrentYear = calendar.get(Calendar.YEAR);
         int CurrentMonth = calendar.get(Calendar.MONTH);
         int CurrentDay = calendar.get(Calendar.DAY_OF_MONTH);
-            DatePickerDialog dialogDate = new DatePickerDialog(RegistroActivity.this, new DatePickerDialog.OnDateSetListener() {
+        Toast.makeText(RegistroActivity.this, String.valueOf(CurrentYear)+"/"+String.valueOf(CurrentMonth+1)+"/"+String.valueOf(CurrentDay),Toast.LENGTH_SHORT).show();
+
+        DatePickerDialog dialogDate = new DatePickerDialog(RegistroActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-             // Toast.makeText(RegistroActivity.this, String.valueOf(CurrentYear)+"/"+String.valueOf(CurrentMonth)+"/"+String.valueOf(CurrentDay),Toast.LENGTH_SHORT).show();
+            public void onDateSet(DatePicker view, int CurrentYear, int CurrentMonth, int CurrentDay) {
+                Toast.makeText(RegistroActivity.this, "Fecha: "+String.valueOf(CurrentYear)+"/"+String.valueOf(CurrentMonth+1)+"/"+String.valueOf(CurrentDay),Toast.LENGTH_SHORT).show();
                 String fechaCumpleanos = String.valueOf(CurrentYear)+"-"+String.valueOf(CurrentMonth + 1)+"-"+String.valueOf(CurrentDay);
                 edFechaCumpleUsuario.setText(fechaCumpleanos);
 
@@ -89,19 +98,29 @@ public class RegistroActivity extends AppCompatActivity {
                     .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            //TODO aqui debe llamarse el endpoit para crear el usuario a la DB
+
                             String nombre = edNombreUsuario.getText().toString();
                             String correo = edCorreoUsuario.getText().toString();
                             String palabraclave = edPasswordUsuario1.getText().toString();
                             String telefono = edTelefonoUsuario.getText().toString();
-                            String fechacumpleanos = edFechaCumpleUsuario.getText().toString();
+                            String fechacumple = edFechaCumpleUsuario.getText().toString();
                             String rol = "client";
 
-                            UsuarioModel usuario = new UsuarioModel(nombre, correo, palabraclave, telefono, fechacumpleanos, rol);
+                            UsuarioModel usuario = new UsuarioModel(nombre, correo, palabraclave, fechacumple, telefono, rol);
+  //                        Toast.makeText(, "usuario "+String.valueOf(nombre)+","+String.valueOf(correo)+","+String.valueOf(palabraclave)+","+String.valueOf(fechacumple)+","+String.valueOf(telefono)+","+String.valueOf(rol));
                             mDatabase.child("usuarios").push().setValue(usuario);
+
+                            SharedPreferences sharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES,MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString(KEY_EMAIL,correo);
+                            editor.putString(KEY_PASSWORD,palabraclave);
+                            editor.putString(KEY_ROLE,rol);
+                            editor.commit();
 
                             Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
                             startActivity(intent);
+                            finish();
+
                         }
                     })
                     .setNegativeButton("No", new DialogInterface.OnClickListener() {

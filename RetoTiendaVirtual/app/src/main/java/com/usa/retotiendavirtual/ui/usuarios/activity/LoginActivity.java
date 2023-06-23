@@ -76,15 +76,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void iniciarSesion() {
+
         String logonemail = edEmailLogin.getText().toString();
         String logonpassword = edPasswordLogin.getText().toString();
         String logonrole = "admin";
         if(verificarCampos()) {
-            if (edEmailLogin.getText().toString().equals("dossmanj@gmail.com") && edPasswordLogin.getText().toString().equals("123456789")) {
+
+            SharedPreferences sharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES, MODE_PRIVATE);
+            String signonemail = sharedPreferences.getString(KEY_EMAIL, "admin");
+            String signonpassword = sharedPreferences.getString(KEY_PASSWORD, "admin");
+
+            Toast.makeText(LoginActivity.this, "Last Logon: USEREMAIL={"+String.valueOf(signonemail)+"}  PASSWORD={"+String.valueOf(signonpassword)+"}",Toast.LENGTH_SHORT).show();
+
+            if (edEmailLogin.getText().toString().equals(signonemail) && edPasswordLogin.getText().toString().equals(signonpassword)) {
                 //TODO almacena info en un archivo privado
                 //
-                SharedPreferences sharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES,MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
+                SharedPreferences updatesharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES,MODE_PRIVATE);
+                SharedPreferences.Editor editor = updatesharedPreferences.edit();
                 editor.putString(KEY_EMAIL,logonemail);
                 editor.putString(KEY_PASSWORD,logonpassword);
                 editor.putString(KEY_ROLE,logonrole);

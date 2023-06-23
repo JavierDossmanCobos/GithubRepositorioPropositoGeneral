@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private void mostrarItemsPorRol(NavigationView navigationView) {
         //  SharedPreferences.
         SharedPreferences sharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES, MODE_PRIVATE);
-        String logonrole = sharedPreferences.getString(KEY_ROLE, "");
+        String logonrole = sharedPreferences.getString(KEY_ROLE, "admin");
         if(logonrole.equals("admin")) {
             navigationView.getMenu().findItem(R.id.nav_agregar_producto).setVisible(true);
         } else if(logonrole.equals("client")) {
