@@ -26,7 +26,7 @@
             android:exported="false"
             android:theme="@style/Theme.RetoTiendaVirtual.NoActionBar" />
         <activity
-            android:name=".activities.RegistroActivity"
+            android:name=".ui.usuarios.activity.RegistroActivity"
             android:exported="false"
             android:theme="@style/Theme.RetoTiendaVirtual.NoActionBar" />
         <activity
@@ -42,7 +42,7 @@
             android:exported="false"
             android:theme="@style/Theme.RetoTiendaVirtual.NoActionBar" />
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".ui.usuarios.activity.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.RetoTiendaVirtual.NoActionBar">
             <intent-filter>

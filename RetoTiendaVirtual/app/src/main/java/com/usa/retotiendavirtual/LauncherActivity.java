@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.usa.retotiendavirtual.activities.LoginActivity;
+import com.usa.retotiendavirtual.ui.usuarios.activity.LoginActivity;
 
 public class LauncherActivity extends AppCompatActivity {
 

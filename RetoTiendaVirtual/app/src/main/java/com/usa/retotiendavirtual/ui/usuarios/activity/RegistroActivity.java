@@ -1,4 +1,4 @@
-package com.usa.retotiendavirtual.activities;
+package com.usa.retotiendavirtual.ui.usuarios.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,12 +13,18 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.usa.retotiendavirtual.R;
+import com.usa.retotiendavirtual.activities.MainActivity;
+import com.usa.retotiendavirtual.ui.usuarios.model.UsuarioModel;
 
 import java.util.Calendar;
 import java.util.TimeZone;
 
 public class RegistroActivity extends AppCompatActivity {
+
+    private DatabaseReference mDatabase;
 
     EditText edNombreUsuario, edCorreoUsuario, edPasswordUsuario1, edPasswordUsuario2, edTelefonoUsuario, edFechaCumpleUsuario;
 
@@ -28,13 +34,16 @@ public class RegistroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        edNombreUsuario = (EditText)findViewById(R.id.edNombreUsuario);
-        edCorreoUsuario = (EditText)findViewById(R.id.edCorreoUsuario);
-        edPasswordUsuario1 = (EditText)findViewById(R.id.edPasswordUsuario1);
-        edPasswordUsuario2 = (EditText)findViewById(R.id.edPasswordUsuario2);
-        edTelefonoUsuario = (EditText)findViewById(R.id.edTelefonoUsuario);
-        edFechaCumpleUsuario = (EditText)findViewById(R.id.edFechaCumpleUsuario);
-        btnRegistrarUsuario = (Button)findViewById(R.id.btnRegistrarUsuario);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+
+        edNombreUsuario = (EditText) findViewById(R.id.edNombreUsuario);
+        edCorreoUsuario = (EditText) findViewById(R.id.edCorreoUsuario);
+        edPasswordUsuario1 = (EditText) findViewById(R.id.edPasswordUsuario1);
+        edPasswordUsuario2 = (EditText) findViewById(R.id.edPasswordUsuario2);
+        edTelefonoUsuario = (EditText) findViewById(R.id.edTelefonoUsuario);
+        edFechaCumpleUsuario = (EditText) findViewById(R.id.edFechaCumpleUsuario);
+        btnRegistrarUsuario = (Button) findViewById(R.id.btnRegistrarUsuario);
 
         btnRegistrarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,8 +71,8 @@ public class RegistroActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
              // Toast.makeText(RegistroActivity.this, String.valueOf(CurrentYear)+"/"+String.valueOf(CurrentMonth)+"/"+String.valueOf(CurrentDay),Toast.LENGTH_SHORT).show();
-                String FechaCumle = String.valueOf(CurrentYear)+"-"+String.valueOf(CurrentMonth + 1)+"-"+String.valueOf(CurrentDay);
-                edFechaCumpleUsuario.setText(FechaCumle);
+                String fechaCumpleanos = String.valueOf(CurrentYear)+"-"+String.valueOf(CurrentMonth + 1)+"-"+String.valueOf(CurrentDay);
+                edFechaCumpleUsuario.setText(fechaCumpleanos);
 
             }
         }, CurrentYear, CurrentMonth, CurrentDay);
@@ -81,6 +90,16 @@ public class RegistroActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             //TODO aqui debe llamarse el endpoit para crear el usuario a la DB
+                            String nombre = edNombreUsuario.getText().toString();
+                            String correo = edCorreoUsuario.getText().toString();
+                            String palabraclave = edPasswordUsuario1.getText().toString();
+                            String telefono = edTelefonoUsuario.getText().toString();
+                            String fechacumpleanos = edFechaCumpleUsuario.getText().toString();
+                            String rol = "client";
+
+                            UsuarioModel usuario = new UsuarioModel(nombre, correo, palabraclave, telefono, fechacumpleanos, rol);
+                            mDatabase.child("usuarios").push().setValue(usuario);
+
                             Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
                             startActivity(intent);
                         }

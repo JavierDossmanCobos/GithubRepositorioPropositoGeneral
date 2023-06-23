@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.usa.retotiendavirtual.R;
 import com.usa.retotiendavirtual.databinding.ActivityMainBinding;
+import com.usa.retotiendavirtual.ui.usuarios.activity.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private void mostrarItemsPorRol(NavigationView navigationView) {
         //  SharedPreferences.
         SharedPreferences sharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES, MODE_PRIVATE);
-        String logonrole = sharedPreferences.getString(KEY_ROLE, null);
+        String logonrole = sharedPreferences.getString(KEY_ROLE, "");
         if(logonrole.equals("admin")) {
             navigationView.getMenu().findItem(R.id.nav_agregar_producto).setVisible(true);
         } else if(logonrole.equals("client")) {

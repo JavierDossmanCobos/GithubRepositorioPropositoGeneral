@@ -1,0 +1,58 @@
+GOOGLE >> FIREBASE
+
+https://console.firebase.google.com/u/0/project/retotiendavirtual/database/retotiendavirtual-default-rtdb/data?hl=es-419
+
+https://retotiendavirtual-default-rtdb.firebaseio.com/
+
+https://console.firebase.google.com/u/0/project/retotiendavirtual/database/retotiendavirtual-default-rtdb/data/~2F?hl=es-419
+
+documentacion:
+
+https://firebase.google.com/docs/database?authuser=0&hl=es
+https://firebase.google.com/docs/database?authuser=0&hl=es
+
+
+
+
+implementation 'com.google.gms:google-services:4.3.15'
+
+implementation platform('com.google.firebase:firebase-bom:32.1.1')
+    implementation 'com.google.firebase:firebase-analytics'
+
+
+
+8:11:47 a. m.: Executing 'signingReport'...
+
+Executing tasks: [signingReport] in project C:\DEVELOPMENT_1\RetoTiendaVirtual
+
+
+> Task :app:signingReport
+Variant: debug
+Config: debug
+Store: C:\Users\LENOVO I7\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 52:AA:BC:7F:62:94:7A:CB:CE:71:9A:B3:D5:AE:F3:C7
+SHA1: 0D:6B:A2:AB:F0:2C:31:AA:9A:52:38:37:6B:5F:BB:D1:11:23:C6:09
+SHA-256: A9:EC:46:9E:54:A6:81:30:AA:55:0E:40:36:56:80:D1:FB:C9:B7:6F:4B:6E:52:1E:70:84:A8:F9:FB:24:C6:6C
+Valid until: viernes, 23 de mayo de 2053
+----------
+Variant: release
+Config: null
+Store: null
+Alias: null
+----------
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\LENOVO I7\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 52:AA:BC:7F:62:94:7A:CB:CE:71:9A:B3:D5:AE:F3:C7
+SHA1: 0D:6B:A2:AB:F0:2C:31:AA:9A:52:38:37:6B:5F:BB:D1:11:23:C6:09
+SHA-256: A9:EC:46:9E:54:A6:81:30:AA:55:0E:40:36:56:80:D1:FB:C9:B7:6F:4B:6E:52:1E:70:84:A8:F9:FB:24:C6:6C
+Valid until: viernes, 23 de mayo de 2053
+----------
+
+BUILD SUCCESSFUL in 308ms
+1 actionable task: 1 executed
+
+Build Analyzer results available
+8:11:48 a. m.: Execution finished 'signingReport'.

@@ -1,4 +1,4 @@
-package com.usa.retotiendavirtual.activities;
+package com.usa.retotiendavirtual.ui.usuarios.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.usa.retotiendavirtual.R;
+import com.usa.retotiendavirtual.activities.MainActivity;
 
 
 public class LoginActivity extends AppCompatActivity {

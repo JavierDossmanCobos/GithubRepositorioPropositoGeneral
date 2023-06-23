@@ -43,7 +43,7 @@ public class AgregarProductoFragment extends Fragment {
         edNombreAddProducto = (EditText) view.findViewById(R.id.edNombreAddProducto);
         edPrecioAddProducto = (EditText) view.findViewById(R.id.edPrecioAddProducto);
         edDescripcionAddProducto = (MultiAutoCompleteTextView) view.findViewById(R.id.edDescripcionAddProducto);
-        imgAgregarProducto = (ImageView) view.findViewById(R.id.imgAgregarProducto);
+        imgAgregarProducto = view.findViewById(R.id.imgAgregarProducto);
         btnAgregarProducto = (Button) view.findViewById(R.id.btnAgregarProducto);
 
         imgAgregarProducto.setOnClickListener(new View.OnClickListener() {
