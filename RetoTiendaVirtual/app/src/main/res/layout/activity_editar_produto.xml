@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
+    android:orientation="vertical"
+    tools:context=".ui.producto.activities.EditarProdutoActivity">
+
+
+    <ImageView
+        android:id="@+id/imgEditProducto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:layout_marginBottom="50sp"
+        android:background="#F66C60"
+        android:scaleType="fitXY"
+        tools:src="@drawable/ic_camera_producto" />
+
+
+    <EditText
+        android:id="@+id/edNombreEditProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:ems="10"
+        android:hint="@string/ingrese_el_nombre_del_producto"
+        android:inputType="text" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/edDescripcionEditProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginVertical="10sp"
+        android:hint="@string/ingrese_la_descripcion_del_producto" />
+
+    <EditText
+        android:id="@+id/edPrecioEditProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:hint="@string/ingrese_el_precio_del_producto"
+        android:inputType="numberSigned" />
+
+    <Button
+        android:id="@+id/btnEditProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15sp"
+        android:background="@drawable/button_gradient_style0"
+        android:paddingHorizontal="15sp"
+        android:text="@string/editar_un_producto"
+        android:textColor="@color/ic_launcher_app_background"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

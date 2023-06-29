@@ -1,4 +1,8 @@
 <resources>
+    <!-- Names for the child records of db Firebase -->
+    <string name="db_name_productos">productos</string>
+    <string name="db_name_usuarios">usuarios</string>
+
     <string name="app_name">RetoTiendaVirtual</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -7,7 +11,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-
 
     <string name="nav_header_title">Reto Tienda Virtual</string>
     <string name="nav_header_subtitle">version 1.0</string>
@@ -31,4 +34,5 @@
     <string name="ingrese_la_descripcion_del_producto">Ingrese la descripcion del producto</string>
     <string name="ingrese_el_precio_del_producto">Ingrese el precio del producto</string>
     <string name="agregar_un_producto">Agregar un Producto</string>
+    <string name="editar_un_producto">Editar un Producto</string>
 </resources>

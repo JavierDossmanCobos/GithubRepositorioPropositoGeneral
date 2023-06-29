@@ -1,0 +1,53 @@
+GOOGLE >> FIREBASE    6:22 a. m. 28/06/2023
+
+https://console.firebase.google.com/u/0/project/retotiendavirtual/database/retotiendavirtual-default-rtdb/data?hl=es-419
+
+https://retotiendavirtual-default-rtdb.firebaseio.com/
+
+https://console.firebase.google.com/u/0/project/retotiendavirtual/database/retotiendavirtual-default-rtdb/data/~2F?hl=es-419
+
+documentacion:
+
+https://firebase.google.com/docs/database?authuser=0&hl=es
+
+Agregar en AndroidManifest.xml
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
+
+add build gradle
+https://firebase.google.com/docs/storage/android/start?hl=es-419
+
+
+producto fragment 
+FirebaseStorage storage = FirebaseStorage.getInstance();
+
+Sube archivos desde un archivo local:
+
+Uri file = Uri.fromFile(new File("path/to/images/rivers.jpg"));
+StorageReference riversRef = storageRef.child("images/"+file.getLastPathSegment());
+uploadTask = riversRef.putFile(file);
+
+// Register observers to listen for when the download is done or if it fails
+uploadTask.addOnFailureListener(new OnFailureListener() {
+    @Override
+    public void onFailure(@NonNull Exception exception) {
+        // Handle unsuccessful uploads
+    }
+}).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+    @Override
+    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+        // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+        // ...
+    }
+});
+
+
+
+PICASSO:     https://square.github.io/picasso/
+
+Asistencia 7:44 a. m. 28/06/2023     https://forms.gle/RRy3dZ6uJJXgrLW4A
+

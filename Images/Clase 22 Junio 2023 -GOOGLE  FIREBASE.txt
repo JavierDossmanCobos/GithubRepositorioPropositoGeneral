@@ -1,4 +1,4 @@
-GOOGLE >> FIREBASE
+GOOGLE >> FIREBASE    6:12 a. m. 26/06/2023
 
 https://console.firebase.google.com/u/0/project/retotiendavirtual/database/retotiendavirtual-default-rtdb/data?hl=es-419
 
@@ -56,3 +56,48 @@ BUILD SUCCESSFUL in 308ms
 
 Build Analyzer results available
 8:11:48 a. m.: Execution finished 'signingReport'.
+
+
+
+
+
+
+
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("usuarios");
+
+
+
+
+SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+int defaultValue = getResources().getInteger(R.integer.saved_high_score_default_key);
+int highScore = sharedPref.getInt(getString(R.string.saved_high_score_key), defaultValue);
+
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("https://fir-realtime-db-sample-6856c.firebaseio.com/products/-MCfzHI8zxl8m-6p5a6w.json", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+
+https://[PROJECT_ID].firebaseio.com/users/jack/name.json
+
+
+
+
+
+
+
+
+https://forms.gle/EAEYYQAQNit86NmRA
+
+
+spinillac28@gmail.com
+
+123456789

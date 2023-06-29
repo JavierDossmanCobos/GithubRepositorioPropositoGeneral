@@ -1,7 +1,9 @@
-package com.usa.retotiendavirtual.ui.agregarproducto;
+package com.usa.retotiendavirtual.ui.producto.fragmentos;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -21,10 +23,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.MultiAutoCompleteTextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.usa.retotiendavirtual.R;
+import com.usa.retotiendavirtual.ui.producto.activities.EditarProdutoActivity;
+import com.usa.retotiendavirtual.ui.producto.model.ProductoModel;
+
+import java.util.Random;
 
 
 public class AgregarProductoFragment extends Fragment {
+
+    private DatabaseReference mDatabase;
 
     private final int CODE_INTENT_CAMERA = 10;
     private final int CODE_PERMISSION_CAMERA = 11;
@@ -40,6 +50,8 @@ public class AgregarProductoFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_agregar_producto, container, false);
 
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
         edNombreAddProducto = (EditText) view.findViewById(R.id.edNombreAddProducto);
         edPrecioAddProducto = (EditText) view.findViewById(R.id.edPrecioAddProducto);
         edDescripcionAddProducto = (MultiAutoCompleteTextView) view.findViewById(R.id.edDescripcionAddProducto);
@@ -48,14 +60,14 @@ public class AgregarProductoFragment extends Fragment {
 
         imgAgregarProducto.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View viewimg) {
                 tomarFoto();
             }
         });
 
         btnAgregarProducto.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View viewbtn) {
                 agregarProducto();
             }
         });
@@ -84,10 +96,46 @@ public class AgregarProductoFragment extends Fragment {
     }
 
     private void agregarProducto() {
+        if(verificarCampos()) {
+            AlertDialog.Builder alerta = new AlertDialog.Builder(getContext())
+                    .setCancelable(false)
+                    .setTitle("Confirmar")
+                    .setMessage("Esta seguro que quiere agregar este producto?")
+                    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
 
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            String nombre = edNombreAddProducto.getText().toString();
+                            long precio = Long.parseLong(edPrecioAddProducto.getText().toString());
+                            String descripcion = edDescripcionAddProducto.getText().toString();
+                            String urlImg = "https://img.freepik.com/premium-photo/white-female-sneakers-yellow-crumpled-muslin-cloth-background-flat-lay-top-view-merchandise-marketing-sale-shopping-concept_408798-95"+"17"+".jpg"; // se eliminara y la reeplazara por Firebase storage
+                            ProductoModel producto = new ProductoModel(nombre, descripcion, precio, urlImg);
+
+                            mDatabase.child(getString(R.string.db_name_productos)).push().setValue(producto);
+
+                        }
+                    })
+                    .setNegativeButton("No", null);
+            alerta.show();
+        }
     }
 
-    private void verificarCampos() {
+    private boolean verificarCampos(){
 
+        if (!edNombreAddProducto.getText().toString().isEmpty()) {
+            if (!edPrecioAddProducto.getText().toString().isEmpty()) {
+                if (!edDescripcionAddProducto.getText().toString().isEmpty()) {
+                    return true;
+                } else {
+                    edDescripcionAddProducto.setError("La descripcion del producto es requerido");
+                }
+            } else {
+                edPrecioAddProducto.setError("El precio del producto es requerido");
+            }
+        } else {
+            edNombreAddProducto.setError("El nombre del producto es requerido");
+        }
+        return false;
     }
+
 }
