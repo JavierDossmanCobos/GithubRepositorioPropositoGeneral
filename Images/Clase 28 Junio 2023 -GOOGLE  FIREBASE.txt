@@ -12,8 +12,8 @@ https://firebase.google.com/docs/database?authuser=0&hl=es
 
 Agregar en AndroidManifest.xml
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 
 
@@ -47,7 +47,53 @@ uploadTask.addOnFailureListener(new OnFailureListener() {
 
 
 
+
+GOOGLE >> FIREBASE 
+(1) Referenciar la base de datos Firebase:
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+private DatabaseReference mDatabase;
+
+mDatabase = FirebaseDatabase.getInstance().getReference();
+
+
+(2) Crear data record en Firebase documento-productos creando el id con llave aleatoria (push()) ejemplo:                            mDatabase.child(getString(R.string.db_name_productos)).push().setValue(producto);
+
+(3) Actualizar data record en Firebase documento-productos ejemplo:
+-De una lista:
+mDatabase.child(context.getString(R.string.db_name_productos)).child(productos.get(position).getId()).removeValue();
+
+-De un fragmento:
+mDatabase.child(getString(R.string.db_name_productos)).child(idProducto).setValue(producto);
+
+
+Leer imagenes de Internet:
+
 PICASSO:     https://square.github.io/picasso/
 
-Asistencia 7:44 a. m. 28/06/2023     https://forms.gle/RRy3dZ6uJJXgrLW4A
+FIREBASE STORAGE >>>> add:  gs://retotiendavirtual.appspot.com/productos
 
+(1) En build.gradle (Module :app)
+
+En el programa
+FirebaseStorage storage = FirebaseStorage.getInstance();
+
+
+
+
+
+Asistencia 7:44 a. m. 28/06/2023 
+
+
+STORAGE 
+
+
+https://firebasestorage.googleapis.com/v0/b/retotiendavirtual.appspot.com/o/productos%2F1148673016?alt=media&token=8d8b5c18-aeb5-40d1-acbb-7261118f5a77
+
+https://firebasestorage.googleapis.com/v0/b/retotiendavirtual.appspot.com/o/productos%2F1493905233?alt=media&token=39c5f766-da93-402c-894b-5d3dc33b13c4
+
+https://firebasestorage.googleapis.com/v0/b/retotiendavirtual.appspot.com/o/productos%2F348886457?alt=media&token=5a488a69-1031-40af-9f8a-87adeada82c9
+
+https://firebasestorage.googleapis.com/v0/b/retotiendavirtual.appspot.com/o/productos%2F749560755?alt=media&token=016dc23d-8331-42e9-9740-c5ebf8c835e2

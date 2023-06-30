@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_product"
             android:title="@string/productos" />
         <item
+            android:id="@+id/nav_agregar_producto"
+            android:icon="@drawable/ic_add_producto"
+            android:title="Agregar Productos" />
+        <item
             android:id="@+id/nav_servicios"
             android:icon="@drawable/ic_service"
             android:title="@string/servicios" />

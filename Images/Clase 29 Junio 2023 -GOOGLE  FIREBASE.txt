@@ -1,0 +1,49 @@
+GOOGLE >> FIREBASE    6:11 a. m. 29/06/2023
+
+https://console.firebase.google.com/u/0/project/retotiendavirtual/database/retotiendavirtual-default-rtdb/data?hl=es-419
+
+https://retotiendavirtual-default-rtdb.firebaseio.com/
+
+https://console.firebase.google.com/u/0/project/retotiendavirtual/database/retotiendavirtual-default-rtdb/data/~2F?hl=es-419
+
+documentacion:
+
+https://firebase.google.com/docs/database?authuser=0&hl=es
+
+
+(1) Shared Preferences
+
+(2) Utilisar SQLite
+Cuando la Info es personal y no representa gran volumen
+Ejemplo: carrito de compra
+
+DB Browser for SQLite SQLitebrowser.org
+
+What it is
+DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
+
+DB4S is for users and developers who want to create, search, and edit databases. DB4S uses a familiar spreadsheet-like interface, and complicated SQL commands do not have to be learned.
+
+Controls and wizards are available for users to:
+
+Create and compact database files
+Create, define, modify and delete tables
+Create, define, and delete indexes
+Browse, edit, add, and delete records
+Search records
+Import and export records as text
+Import and export tables from/to CSV files
+Import and export databases from/to SQL dump files
+Issue SQL queries and inspect the results
+Examine a log of all SQL commands issued by the application
+Plot simple graphs based on table or query data
+
+https://sqlitebrowser.org/dl/
+https://sqlitebrowser.org/
+
+
+
+
+System.out.println()
+
+https://forms.gle/XPYH1vry8cRgW7cs9

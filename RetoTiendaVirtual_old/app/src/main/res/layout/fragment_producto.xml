@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ui.producto.ProductoFragment">
+    tools:context=".ui.producto.fragmentos.ProductoFragment">
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/imgSlider"

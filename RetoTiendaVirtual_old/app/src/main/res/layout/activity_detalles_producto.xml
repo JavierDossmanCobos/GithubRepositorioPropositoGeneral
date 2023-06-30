@@ -7,7 +7,7 @@
     android:layout_marginHorizontal="10sp"
     android:layout_marginVertical="10sp"
     android:orientation="vertical"
-    tools:context=".DetallesProductoActivity">
+    tools:context=".ui.producto.activities.DetallesProductoActivity">
 
     <ImageView
         android:id="@+id/imgDetalleProducto"
@@ -77,7 +77,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnAgregarProducto"
+        android:id="@+id/btnAddProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10sp"

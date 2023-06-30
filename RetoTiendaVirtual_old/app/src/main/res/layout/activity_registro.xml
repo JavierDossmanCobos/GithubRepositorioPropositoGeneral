@@ -2,16 +2,79 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center|center_horizontal|center_vertical"
+    android:layout_marginHorizontal="20sp"
+    android:layout_marginVertical="20sp"
+    android:gravity="center|center_horizontal|center_vertical"
     android:orientation="vertical"
-    tools:context=".RegistroActivity" >
+    tools:context=".ui.usuarios.activity.RegistroActivity">
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/edNombreUsuario"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50sp"
+        android:layout_marginVertical="5sp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name" />
+        android:hint="@string/ingrese_su_nombre"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edCorreoUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginVertical="5sp"
+        android:ems="10"
+        android:hint="@string/ingrese_su_correo"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edPasswordUsuario1"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginVertical="5sp"
+        android:ems="10"
+        android:hint="@string/ingrese_su_contrase_a"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edPasswordUsuario2"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginVertical="5sp"
+        android:ems="10"
+        android:hint="@string/repita_su_contrase_a"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edTelefonoUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginVertical="5sp"
+        android:ems="10"
+        android:hint="@string/ingrese_su_numero_de_telefono"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/edFechaCumpleUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginVertical="5sp"
+        android:ems="10"
+        android:hint="@string/ingrese_su_fecha_de_nacimiento"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnRegistrarUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginVertical="15sp"
+        android:background="@drawable/button_gradient_style0"
+        android:padding="10sp"
+        android:text="@string/registrar_su_cuenta"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 </LinearLayout>

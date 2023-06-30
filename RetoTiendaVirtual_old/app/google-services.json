@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "540891660985",
+    "firebase_url": "https://retotiendavirtual-default-rtdb.firebaseio.com",
+    "project_id": "retotiendavirtual",
+    "storage_bucket": "retotiendavirtual.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540891660985:android:d1e4c2be2d4aae74579168",
+        "android_client_info": {
+          "package_name": "com.usa.retotiendavirtual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "540891660985-kk8m3onl9osjjb4eds84f6f6l8rjle1j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.usa.retotiendavirtual",
+            "certificate_hash": "0d6ba2abf02c31aa9a5238376b5fbbd11123c609"
+          }
+        },
+        {
+          "client_id": "540891660985-5va42lkpddc095alos05s7sr5nn1pnbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6RrGInCopWODMVC_63_ZS58LygTB_tU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "540891660985-5va42lkpddc095alos05s7sr5nn1pnbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

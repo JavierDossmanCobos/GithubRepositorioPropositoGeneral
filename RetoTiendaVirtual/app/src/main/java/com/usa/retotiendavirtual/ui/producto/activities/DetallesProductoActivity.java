@@ -21,14 +21,14 @@ public class DetallesProductoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_producto);
 
-        imgDetalleProducto = findViewById((R.id.imgDetalleProducto));
-        txtNombre = findViewById((R.id.txtNombreDetalleProducto));
-        txtDescripcion = findViewById((R.id.txtDescripcionDetalleProducto));
-        txtPrecio = findViewById((R.id.txtPrecioDetalleProducto));
-        txtCantidad = findViewById((R.id.textCantidad));
-        btnResCantidad = findViewById((R.id.btnResCantidad));
-        btnSumCantidad = findViewById((R.id.btnSumCantidad));
-        btnAgregarProducto = findViewById((R.id.btnAgregarProducto));
+        imgDetalleProducto = (ImageView) findViewById((R.id.imgDetalleProducto));
+        txtNombre = (TextView) findViewById((R.id.txtNombreDetalleProducto));
+        txtDescripcion = (TextView) findViewById((R.id.txtDescripcionDetalleProducto));
+        txtPrecio = (TextView) findViewById((R.id.txtPrecioDetalleProducto));
+        txtCantidad = (TextView) findViewById((R.id.textCantidad));
+        btnResCantidad = (Button) findViewById((R.id.btnResCantidad));
+        btnSumCantidad = (Button) findViewById((R.id.btnSumCantidad));
+        btnAgregarProducto = (Button) findViewById((R.id.btnAddProducto));
 
         cargarDatos();
         btnResCantidad.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +80,5 @@ public class DetallesProductoActivity extends AppCompatActivity {
             txtCantidad.setText(String.valueOf(cantidad));
         }
     }
-
 
 }

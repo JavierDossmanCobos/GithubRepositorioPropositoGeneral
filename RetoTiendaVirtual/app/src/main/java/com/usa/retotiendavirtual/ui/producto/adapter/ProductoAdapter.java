@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
 import com.usa.retotiendavirtual.ui.producto.activities.DetallesProductoActivity;
 import com.usa.retotiendavirtual.R;
 import com.usa.retotiendavirtual.ui.producto.holders.ProductoViewHolder;
@@ -46,7 +47,10 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoViewHolder> {
         holder.txtTituloProducto.setText(productos.get(position).getNombre());
         holder.txtDescripcionProducto.setText(productos.get(position).getDescripcion());
         holder.txtPrecioProducto.setText("$ "+String.valueOf(productos.get(position).getPrecio()));
-        holder.imgProducto.setImageResource(productos.get(position).getImagen());
+
+        Picasso.get().load(productos.get(position).getUrlImg()).into(holder.imgProducto);
+
+     // holder.imgProducto.setImageResource(productos.get(position).getImagen());
         holder.position = holder.getAdapterPosition();
     }
 }

@@ -43,12 +43,14 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     // Realtime Database library
     implementation 'com.google.firebase:firebase-database-ktx'
+    // Add the dependency for the Cloud Storage library
+    implementation 'com.google.firebase:firebase-storage'
 
-    implementation("com.google.firebase:firebase-storage")
 
     //Estas son librerias externas
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
-
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
     //Estas son librerias Google
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
