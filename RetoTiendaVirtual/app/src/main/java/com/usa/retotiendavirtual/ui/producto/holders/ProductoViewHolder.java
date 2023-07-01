@@ -65,6 +65,7 @@ public class ProductoViewHolder extends RecyclerView.ViewHolder {
                 intent.putExtra("descripcion",productos.get(position).getDescripcion());
                 intent.putExtra("precio",productos.get(position).getPrecio());
                 intent.putExtra("imagen", productos.get(position).getImagen());
+                intent.putExtra("idProducto", productos.get(position).getId());
                 contexto.startActivity(intent);
             }
         });

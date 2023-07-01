@@ -10,7 +10,24 @@ public class ProductoModel {
 
     private Integer imagen;   // to be deleted
 
-    public ProductoModel() {
+    private Integer cantidad;
+
+    private long valor;
+
+    private int idDb;
+
+    public ProductoModel(){
+
+    }
+
+    public ProductoModel(String nombre, String descripcion, long precio, String idFirebase, Integer cantidad, long valor, int idDb) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.id = id;
+        this.cantidad = cantidad;
+        this.valor = valor;
+        this.idDb = idDb;
     }
 
     public ProductoModel(String nombre, String descripcion, long precio, String urlImg, String id, Integer imagen) {
@@ -75,6 +92,30 @@ public class ProductoModel {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public long getValor() {
+        return valor;
+    }
+
+    public void setValor(long valor) {
+        this.valor = valor;
+    }
+
+    public int getIdDb() {
+        return idDb;
+    }
+
+    public void setIdDb(int idDb) {
+        this.idDb = idDb;
     }
 }
 
