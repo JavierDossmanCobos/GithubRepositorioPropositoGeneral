@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.usa.retotiendavirtual.R;
-import com.usa.retotiendavirtual.ui.producto.adapter.ProductoAdapter;
 import com.usa.retotiendavirtual.ui.sucursales.activities.DetallesSucursalesActivity;
 import com.usa.retotiendavirtual.ui.sucursales.model.SucursalModel;
 
@@ -49,7 +48,7 @@ public class SucursalAdapter extends RecyclerView.Adapter<SucursalAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgCardViewSucursal = itemView.findViewById(R.id.imgCardViewSucursal);
+            imgCardViewSucursal = itemView.findViewById(R.id.imgCardViewProducto);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

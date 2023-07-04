@@ -35,7 +35,7 @@ public class ProductoViewHolder extends RecyclerView.ViewHolder {
     public ProductoViewHolder(@NonNull View itemView, List<ProductoModel> productos) {
         super(itemView);
 
-        imgProducto = (ImageView) itemView.findViewById(R.id.imgCardViewSucursal);
+        imgProducto = (ImageView) itemView.findViewById(R.id.imgCardViewProducto);
         txtTituloProducto = (TextView) itemView.findViewById(R.id.txtTituloProducto);
         txtDescripcionProducto = (TextView) itemView.findViewById(R.id.txtDescripcionProducto);
         txtPrecioProducto = (TextView) itemView.findViewById(R.id.txtPrecioProducto);
