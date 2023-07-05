@@ -57,16 +57,12 @@ public class DBhelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean updateProduct(int id, String nombre, String descripcion, long precio, Integer cantidad, long valor, String idFirebase) {
+    public boolean updateProduct(int id, Integer cantidad, long valor) {
         try {
             SQLiteDatabase dbase = this.getWritableDatabase();
             ContentValues drecord = new ContentValues();
-            drecord.put("nombre", nombre);
-            drecord.put("descripcion", descripcion);
-            drecord.put("precio", precio);
             drecord.put("cantidad", cantidad);
             drecord.put("valor", valor);
-            drecord.put("id_firebase", idFirebase);
 
             dbase.update(TABLE_PRODUCTS, drecord, "id=?", new String[]{Integer.toString(id)});
             dbase.close();

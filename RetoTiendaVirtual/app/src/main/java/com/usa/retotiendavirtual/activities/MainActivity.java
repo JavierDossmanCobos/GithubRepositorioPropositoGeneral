@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.usa.retotiendavirtual.R;
 import com.usa.retotiendavirtual.databinding.ActivityMainBinding;
+import com.usa.retotiendavirtual.ui.producto.activities.CarritoDeComprasActivity;
 import com.usa.retotiendavirtual.ui.usuarios.activity.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -85,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.ItemCompras) {
-            Toast.makeText(this, "Item Carrito de Compras", Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(this, "Item Carrito de Compras", Toast.LENGTH_SHORT).show();
+            Intent shopcart = new Intent(this, CarritoDeComprasActivity.class);
+            startActivity(shopcart);
         } else if (id == R.id.ItemNosotros) {
             Toast.makeText(this, "Item Nosotros", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.ItemCerrarSesion) {

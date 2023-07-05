@@ -1,7 +1,9 @@
+GOOGLE >> FIREBASE    8:02 a. m. 4/07/2023
+
 Get a DataSnapshot for the location at the specified relative path. The relative path can either be a simple child key (e.g. 'fred') or a deeper slash-separated path (e.g. 'fred/name/first'). If the child location has no data, an empty DataSnapshot is returned.
 
 
 
 https://forms.gle/gc2YBfEJ4sQK3dGR8
 
-https://github.com/spinillac28/TiendaVirtualG32.git
+Repositorio TiendaVirtual:  https://github.com/spinillac28/TiendaVirtualG32.git

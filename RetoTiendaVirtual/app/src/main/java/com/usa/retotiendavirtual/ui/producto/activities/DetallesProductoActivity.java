@@ -84,7 +84,7 @@ public class DetallesProductoActivity extends AppCompatActivity {
 
     private void restartCantidad() {
         cantidad = Integer.parseInt(txtCantidad.getText().toString());
-        if (cantidad>0){
+        if (cantidad>1){
             cantidad--;
             txtCantidad.setText(String.valueOf(cantidad));
         }
@@ -97,7 +97,7 @@ public class DetallesProductoActivity extends AppCompatActivity {
             AlertDialog.Builder alerta = new AlertDialog.Builder(this)
                     .setCancelable(false)
                     .setTitle("Agregar Producto ")
-                    .setMessage("¿Esta seguro que quiere agregar "+numberProducto+" a su carrito de compras?")
+                    .setMessage("¿Esta seguro que quiere agregar "+numberProducto+" unidades de "+nombre+" al carrito de compras?")
                        .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {

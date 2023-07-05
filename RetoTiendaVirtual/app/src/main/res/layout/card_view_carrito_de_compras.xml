@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100sp"
+    android:layout_margin="5sp"
+    android:layout_marginHorizontal="10sp"
+    android:textAlignment="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10sp"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nombreProductoCarritoCompra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5sp"
+                android:text="Nombre producto"
+                android:textColorHint="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descripcionProductoCarritoCompra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5sp"
+                android:text="Descripcion producto" />
+
+            <TextView
+                android:id="@+id/precioProductoCarritoCompra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5sp"
+                android:gravity="left"
+                android:text="Precio producto" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5sp"
+                android:layout_weight="0"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSubstractProductoCarritoCompra"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_marginHorizontal="2.5sp"
+                    android:background="@drawable/ic_substract" />
+
+                <TextView
+                    android:id="@+id/cantidadProductoCarritoCompra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5sp"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnAddProductoCarritoCompra"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_marginHorizontal="2.5sp"
+                    android:background="@drawable/ic_add" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_weight="2"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/valorProductoCarritoCompra"
+                    android:layout_width="86dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:layout_weight="4"
+                    android:gravity="right"
+                    android:text="0"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnDeleteProductoCarritoCompra"
+                    android:layout_width="20sp"
+                    android:layout_height="20sp"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="2sp"
+                    android:background="@drawable/ic_delete" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
