@@ -28,8 +28,8 @@ public class ProductoViewHolder extends RecyclerView.ViewHolder {
     private final String KEY_ROLE = "LOGONROLE";
     public ImageView imgProducto;
     public TextView txtTituloProducto, txtDescripcionProducto, txtPrecioProducto;
-    public ImageButton btnEliminaProducto, btnEditaProducto;
-    public LinearLayout opcionesAdminProducto;
+    public ImageButton btnEliminaProducto, btnEditaProducto, btnCompraProducto;
+    public LinearLayout opcionesAdminProducto, opcionesClientProducto;
     public int position;
 
     public ProductoViewHolder(@NonNull View itemView, List<ProductoModel> productos) {
@@ -39,9 +39,11 @@ public class ProductoViewHolder extends RecyclerView.ViewHolder {
         txtTituloProducto = (TextView) itemView.findViewById(R.id.txtTituloProducto);
         txtDescripcionProducto = (TextView) itemView.findViewById(R.id.txtDescripcionProducto);
         txtPrecioProducto = (TextView) itemView.findViewById(R.id.txtPrecioProducto);
+        opcionesAdminProducto = (LinearLayout) itemView.findViewById(R.id.opcionesAdminProducto);
         btnEliminaProducto = (ImageButton) itemView.findViewById(R.id.btnEliminaProducto);
         btnEditaProducto = (ImageButton) itemView.findViewById(R.id.btnEditaProducto);
-        opcionesAdminProducto = (LinearLayout) itemView.findViewById(R.id.opcionesAdminProducto);
+        opcionesClientProducto = (LinearLayout) itemView.findViewById(R.id.opcionesClientProducto);
+        btnCompraProducto = (ImageButton) itemView.findViewById(R.id.btnCompraProducto);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -52,8 +54,10 @@ public class ProductoViewHolder extends RecyclerView.ViewHolder {
 
         if(logonrole.equals("admin")) {
             opcionesAdminProducto.setVisibility(View.VISIBLE);
+            opcionesClientProducto.setVisibility(View.VISIBLE);
         } else {
             opcionesAdminProducto.setVisibility(View.INVISIBLE);
+            opcionesClientProducto.setVisibility(View.VISIBLE);
         }
 
         itemView.setOnClickListener(new View.OnClickListener() {

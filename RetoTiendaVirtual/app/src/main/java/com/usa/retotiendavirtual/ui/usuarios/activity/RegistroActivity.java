@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.usa.retotiendavirtual.R;
@@ -29,6 +31,8 @@ public class RegistroActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
     private final String FILENAME_SHARED_PREFERENCES = "LOGONdata_SIGNONuser";
+
+    private final String KEY_ID_USUARIO = "ID_USUARIO";
     private final String KEY_EMAIL = "LOGONEMAIL";
     private final String KEY_PASSWORD = "LOGONPASSWORD";
     private final String KEY_ROLE = "LOGONROLE";
@@ -112,6 +116,7 @@ public class RegistroActivity extends AppCompatActivity {
 
                             SharedPreferences sharedPreferences = getSharedPreferences(FILENAME_SHARED_PREFERENCES,MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString(KEY_ID_USUARIO,"-NZ80oeqB7VCtnfNzLQH");
                             editor.putString(KEY_EMAIL,correo);
                             editor.putString(KEY_PASSWORD,palabraclave);
                             editor.putString(KEY_ROLE,rol);
@@ -120,6 +125,8 @@ public class RegistroActivity extends AppCompatActivity {
                             Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
+
+
 
                         }
                     })

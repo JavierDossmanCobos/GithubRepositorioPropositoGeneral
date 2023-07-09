@@ -81,33 +81,45 @@ public class DBhelper extends SQLiteOpenHelper {
             dbase.close();
             return true;
         } catch (Exception e) {
-            Log.e("updateProduct", e.toString());
+            Log.e("DeleteOneProduct", e.toString());
             return false;
         }
     }
 
+
+    public boolean deleteAllProduct() {
+        try {
+            SQLiteDatabase dbase = this.getWritableDatabase();
+            dbase.delete(TABLE_PRODUCTS, null,null);
+            dbase.close();
+            return true;
+        } catch (Exception e) {
+            Log.e("DeleteAllProduct", e.toString());
+            return false;
+        }
+    }
     @SuppressLint("Range")
     public List<ProductoModel> getallProducts() {
         try {
-            List<ProductoModel> shoppingcartProducts = new LinkedList<>();
+            List<ProductoModel> shoppingCartProducts = new LinkedList<>();
             SQLiteDatabase dbase = this.getWritableDatabase();
-            Cursor dbresponse = dbase.rawQuery("select * from " + TABLE_PRODUCTS, null);
+            Cursor dbresponse = dbase.rawQuery("select * from " + TABLE_PRODUCTS + " order by id ASC", null);
             dbresponse.moveToFirst();
             while (!dbresponse.isAfterLast()) {
-
+                int idDb = dbresponse.getInt(dbresponse.getColumnIndex("id"));
                 String nombre = dbresponse.getString(dbresponse.getColumnIndex("nombre"));
                 String descripcion = dbresponse.getString(dbresponse.getColumnIndex("descripcion"));
                 long precio = dbresponse.getLong(dbresponse.getColumnIndex("precio"));
-                String idFirebase = dbresponse.getString(dbresponse.getColumnIndex("id_firebase"));
                 int cantidad = dbresponse.getInt(dbresponse.getColumnIndex("cantidad"));
                 long valor = dbresponse.getLong(dbresponse.getColumnIndex("valor"));
-                int idDb = dbresponse.getInt(dbresponse.getColumnIndex("id"));
+                String idFirebase = dbresponse.getString(dbresponse.getColumnIndex("id_firebase"));
 
-                ProductoModel shoppingcartproducto = new ProductoModel(nombre, descripcion, precio, idFirebase, cantidad, valor, idDb);
-                shoppingcartProducts.add(shoppingcartproducto);
+
+                ProductoModel producto = new ProductoModel(nombre, descripcion, precio, cantidad, valor, idFirebase, idDb);
+                shoppingCartProducts.add(producto);
                 dbresponse.moveToNext();
             }
-            return shoppingcartProducts;
+            return shoppingCartProducts;
 
         } catch (Exception e) {
             Log.e("getallProducts", e.toString());

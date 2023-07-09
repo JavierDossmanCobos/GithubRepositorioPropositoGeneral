@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.usa.retotiendavirtual.R;
 import com.usa.retotiendavirtual.activities.MainActivity;
 
@@ -25,6 +26,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText edEmailLogin, edPasswordLogin;
     TextView txtForgotPasswordLogin;
     Button btnInicioLogin, btnRegistroLogin;
+
+    private FirebaseAuth mAuth;
+
+    // Initialize Firebase Auth
+    //mAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

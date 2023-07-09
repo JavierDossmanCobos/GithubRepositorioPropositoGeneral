@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.usa.retotiendavirtual.R;
+import com.usa.retotiendavirtual.ui.producto.activities.CarritoDeComprasActivity;
 import com.usa.retotiendavirtual.ui.producto.helpers.DBhelper;
 import com.usa.retotiendavirtual.ui.producto.model.ProductoModel;
 
@@ -51,6 +52,8 @@ public class ProductoShopCartViewHolder extends RecyclerView.ViewHolder {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 DBhelper dbase = new DBhelper(itemView.getContext());
                                 dbase.deleteProduct(producto.get(posicion).getIdDb());
+                                producto.remove(posicion);
+                                CarritoDeComprasActivity.updateData(producto);
                             }
                         })
                         .setNegativeButton("No", null);
@@ -70,6 +73,7 @@ public class ProductoShopCartViewHolder extends RecyclerView.ViewHolder {
                 producto.get(posicion).setCantidad(cantidad);
                 producto.get(posicion).setValor(valor);
                 updateShopCartProducts(producto.get(posicion).getIdDb(), producto.get(posicion).getCantidad(), producto.get(posicion).getValor());
+                CarritoDeComprasActivity.updateData(producto);
             }
         });
 
@@ -85,6 +89,7 @@ public class ProductoShopCartViewHolder extends RecyclerView.ViewHolder {
                     producto.get(posicion).setCantidad(cantidad);
                     producto.get(posicion).setValor(valor);
                     updateShopCartProducts(producto.get(posicion).getIdDb(), producto.get(posicion).getCantidad(), producto.get(posicion).getValor());
+                    CarritoDeComprasActivity.updateData(producto);
                 }
 
             }

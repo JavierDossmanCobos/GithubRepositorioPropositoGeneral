@@ -45,8 +45,6 @@ public class ProductoFragment extends Fragment {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-
-
         imgSlider = view.findViewById(R.id.imgSlider);
         recyclerViewProducto = view.findViewById(R.id.recyclerViewProductos);
 
@@ -89,9 +87,13 @@ public class ProductoFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<ProductoModel> firebaseproductos = new LinkedList<>();
                 for (DataSnapshot childrenProductos: dataSnapshot.getChildren()) {
+                    System.out.println(childrenProductos.getValue());
                     ProductoModel producto = childrenProductos.getValue(ProductoModel.class);
                     producto.setId(childrenProductos.getKey());
-                    producto.setImagen(R.drawable.zapato_20);
+                    System.out.println("getKey()= "+childrenProductos.getKey());
+                    System.out.println("getUrlImg()= "+producto.getUrlImg());
+
+                    producto.setUrlImg(producto.getUrlImg());
 
                     firebaseproductos.add(producto);
 

@@ -77,7 +77,7 @@ public class EditarProdutoActivity extends AppCompatActivity {
                             String nombre = edNombreEditProducto.getText().toString();
                             long precio = Long.parseLong(edPrecioEditProducto.getText().toString());
                             String descripcion = edDescripcionEditProducto.getText().toString();
-                            String urlImg = "https://img.freepik.com/premium-photo/white-female-sneakers-yellow-crumpled-muslin-cloth-background-flat-lay-top-view-merchandise-marketing-sale-shopping-concept_408798-95"+"17"+".jpg"; // se eliminara y la reeplazara por Firebase storage
+                            String urlImg = "https://firebasestorage.googleapis.com/v0/b/retotiendavirtual.appspot.com/o/productos%2F1767240156?alt=media&token=44ae9f99-98c6-4046-b010-7baad4550de8"; // se eliminara y la reeplazara por Firebase storage
                             ProductoModel producto = new ProductoModel(nombre, descripcion, precio, urlImg);
 
                             mDatabase.child(getString(R.string.db_name_productos)).child(idProducto).setValue(producto);

@@ -1,0 +1,29 @@
+GOOGLE >> FIREBASE    6:29 a. m. 5/07/2023
+
+https://console.firebase.google.com/u/0/project/retotiendavirtual/database/retotiendavirtual-default-rtdb/data?hl=es-419
+
+Documentacion 
+https://firebase.google.com/docs/auth?authuser=1&hl=es
+
+
+
+Authentication:
+
+Identifier 			Providers 	Created Signed In 	User UID
+
+dossmanjavier@gmail.com 	email 		Jul 5, 2023 		rECrVERDtEUmPzpvmS7M5nV0Sfd2
+
+
+
+
+Reestablecer contraseña 
+https://firebase.google.com/docs/auth/android/manage-users?authuser=1&hl=es
+
+
+https://forms.gle/jkHoU2Y6Kcy3Lg8y8
+
+
+
+
+GITHUB Repository class
+https://github.com/spinillac28/TiendaVirtualG32.git
